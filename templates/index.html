@@ -3,10 +3,9 @@
 {% block content %}
 
 {% if greeting %}
-    I just wanted to say
-    <em style="color: green; font-size: 2em;">{{ greeting }}</em>.
+    <h1>{{ greeting }}</h1>
 {% else %}
-    <em>Hello</em>, world!
+    <h1>Hello, world!</h1>
 {% endif %}
 
 {% endblock %}
