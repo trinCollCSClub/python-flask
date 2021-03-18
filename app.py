@@ -1,14 +1,13 @@
 from flask import Flask
 from flask import render_template
-from flask import request
 
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def index():
     
-    greeting = "Hello World"
-    return greeting
+    greeting = "Welcome to the student-run website for the Trinity College Computer Science Club!"
+    return render_template("index.html", greeting=greeting)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='10.252.148.28',debug=True)
