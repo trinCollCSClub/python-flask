@@ -2,8 +2,9 @@
 
 {% block content %}
 
-{% if greeting %}
-    <h1>{{ greeting }}</h1>
+{% if num_page_views %}
+    <h1>Welcome to the student-run website for the Trinity College Computer Science Club!</h1>
+   <p>This page has been viewed {{ num_page_views }} times.</p>
 {% else %}
     <h1>Hello, world!</h1>
 {% endif %}

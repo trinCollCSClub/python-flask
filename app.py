@@ -19,22 +19,16 @@ class Analytics(db.Model):
         return f"{self.views}"
 
 @app.route('/')
-def hello_world():
+def index():
     if Analytics.query.first() == None:
         analytics = Analytics(0)
         db.session.add(analytics)
         db.session.commit()
     Analytics.query.first().views = Analytics.query.first().views + 1
     db.session.commit()
-    return f"This page has been viewed {Analytics.query.first()} times"
+
+    return render_template("index.html", num_page_views=Analytics.query.first())
 
 if __name__ == "__main__":
     db.create_all()
-    app.run(debug=True)
-def index():
-    
-    greeting = "Welcome to the student-run website for the Trinity College Computer Science Club!"
-    return render_template("index.html", greeting=greeting)
-
-if __name__ == "__main__":
-    app.run(host='10.252.148.28',debug=True)
+    app.run(host='10.252.148.28', debug=True)
