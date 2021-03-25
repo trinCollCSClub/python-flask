@@ -3,7 +3,13 @@
 {% block content %}
 
 {% if num_page_views %}
-    <h1>Welcome to the student-run website for the Trinity College Computer Science Club!</h1>
+   <h1>Welcome to the student-run website for the Trinity College Computer Science Club.</h1>
+   <h3>Here are some of the members of the club: </h3>
+   <ul>
+   {% for user in users %}
+       <li>{{ user }}</li>
+   {% endfor %}
+   </ul>
    <p>This page has been viewed {{ num_page_views }} times.</p>
 {% else %}
     <h1>Hello, world!</h1>
