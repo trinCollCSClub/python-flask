@@ -1,3 +1,3 @@
-function test() {
+const test = () => {
     console.log("PRESSED");
 }
